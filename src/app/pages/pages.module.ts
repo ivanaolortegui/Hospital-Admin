@@ -8,13 +8,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { GraphicOneComponent } from './graphic-one/graphic-one.component';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     PagesComponent,
     ProgressComponent,
-    GraphicOneComponent],
+    GraphicOneComponent,
+    AccountSettingComponent],
   exports: [
     DashboardComponent,
     PagesComponent,
