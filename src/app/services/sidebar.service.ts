@@ -14,6 +14,16 @@ export class SidebarService {
         { titulo: 'Gráficas', url: 'graphic-one' },
       ]
     },
+
+    {
+      titulo: 'Mantenimientos',
+      icono: 'mdi mdi-folder-lock-open',
+      submenu: [
+        { titulo: 'Usuarios', url: 'users' },
+        { titulo: 'Hospitales', url: 'hospitals' },
+        { titulo: 'Médicos', url: 'medics' },
+      ]
+    },
   ];
 
   constructor() { }

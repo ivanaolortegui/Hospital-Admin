@@ -9,6 +9,10 @@ import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { GraphicOneComponent } from './graphic-one/graphic-one.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
+import { UserService } from '../services/user.service';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './maintenance/users/users.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
     PagesComponent,
     ProgressComponent,
     GraphicOneComponent,
-    AccountSettingComponent],
+    AccountSettingComponent,
+    ProfileComponent,
+    UsersComponent],
   exports: [
     DashboardComponent,
     PagesComponent,
@@ -26,7 +32,9 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
     CommonModule,
     SharedModule,
     RouterModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class PagesModule { }
