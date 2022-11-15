@@ -36,6 +36,10 @@ export class UserService {
     return localStorage.getItem('token') || '';
   }
 
+  /* get role(): 'ADMIN_ROLE' | 'USER_ROLE' {
+    return this.user.role;
+  } */
+
   get headers() {
     return {
       headers: {
@@ -49,14 +53,20 @@ export class UserService {
     this.router.navigateByUrl('/login');
   }
 
+  saveLocalStorage(token: string, menu: any) {
 
-  valideToken(): boolean {
+    localStorage.setItem('token', token);
+    localStorage.setItem('menu', JSON.stringify(menu));
+
+  }
+
+  valideToken(): any {
     // remove the password from the user object
     const token = localStorage.getItem('token');
     const { email, name, id, password, role, img = '', } = this.userData;
     this.user = new User(name, email, id, password, img, role);
     if (token) {
-
+      this.saveLocalStorage(token, '');
       return true;
     } else {
       return false;
@@ -86,7 +96,7 @@ export class UserService {
   }
 
   login(formData: LoginForm) {
-    return this.http.get(`${base_url}/users/?email=${formData}`)
+    return this.http.get(`https://62be3a6bbe8ba3a10d4fb1c5.mockapi.io/users/?email=${formData}`)
       .pipe(
         tap((resp: any) => {
           console.log(resp);

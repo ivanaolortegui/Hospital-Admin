@@ -23,11 +23,18 @@ export class SearchService {
       }
     }
   }
-  /*   private transformUsers(resultados: any[]): User[] {
-      return resultados.map(
+  /*   private transformUsers(results: any[]): User[] {
+      return results.map(
         user => new User(user.nombre, user.email, '', user.img, user.google, user.role, user.uid)
       );
     }
+
+ private transformHospitals( results: any[] ): Hospital[] {
+    return results;
+}
+ private transformMedics( results: any[] ): Medic[] {
+    return results;
+}
    */
   search(
     type: 'usuarios' | 'medicos' | 'hospitales',
@@ -36,21 +43,35 @@ export class SearchService {
 
     console.log(type, term);
 
-    /*     const url = `${base_url}`;
-        return this.http.get<any[]>(url, this.headers)
-          .pipe(
-            map((resp: any) => {
-    
-              switch (tipo) {
-                case 'usuarios':
-                  return this.transformUsers(resp.resultados)
-    
-                default:
-                  return [];
-              }
-    
-            })
-          ); */
+    const url = `${base_url}`;
+    /*   return this.http.get<any[]>( url, this.headers )
+               .pipe(
+                 map( (resp: any ) => { 
+   
+                   switch ( type ) {
+                     case 'usuarios':
+                       return this.transformUsers( resp.resultados )
+   
+                     case 'hospitales':
+                       return this.transformHospitals( resp.resultados )
+   
+                     case 'medicos':
+                        return this.transformMedics( resp.resultados )
+                   
+                     default:
+                       return [];
+                   }
+   
+                 })
+               );  */
+
+  }
+
+  globalSearch(terms: string) {
+
+    const url = `${base_url}/todo/${terms}`;
+    return this.http.get(url, this.headers);
+
   }
 
 }

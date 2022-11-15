@@ -13,6 +13,11 @@ import { UserService } from '../services/user.service';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './maintenance/users/users.component';
+import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
+import { MedicsComponent } from './maintenance/medics/medics.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { MedicComponent } from './maintenance/medics/medic.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { UsersComponent } from './maintenance/users/users.component';
     GraphicOneComponent,
     AccountSettingComponent,
     ProfileComponent,
-    UsersComponent],
+    UsersComponent,
+    HospitalsComponent,
+    MedicsComponent,
+    MedicComponent,
+    SearchComponent],
   exports: [
     DashboardComponent,
     PagesComponent,
@@ -35,6 +44,7 @@ import { UsersComponent } from './maintenance/users/users.component';
     ComponentsModule,
     FormsModule,
     ReactiveFormsModule,
+    PipesModule
   ]
 })
 export class PagesModule { }
